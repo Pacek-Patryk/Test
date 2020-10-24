@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": ["airbnb", "plugin:prettier/recommended"],
   "parserOptions": {
@@ -10,6 +11,9 @@
     },
     "ecmaVersion": 12,
     "sourceType": "module"
+  },
+  "globals": {
+    "document": true
   },
   "plugins": ["react"],
   "rules": {
@@ -21,5 +25,12 @@
     ],
     "react/react-in-jsx-scope": "off",
     "react/jsx-one-expression-per-line": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
   }
 }
